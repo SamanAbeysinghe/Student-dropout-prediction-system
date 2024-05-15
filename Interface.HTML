@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dropout Prediction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        input, select {
+            width: calc(20% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            width: 10%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        #predictionResult {
+            color: #555;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Dropout Prediction</h2>
+    <p>Enter student details</p>
+
+    <form id="dropoutForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="maritalStatus">Marital Status:</label>
+        <select id="maritalStatus" name="maritalStatus" required>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+        </select>
+
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" required>
+
+        <label for="previousQualifications">Previous Qualifications:</label>
+        <input type="text" id="previousQualifications" name="previousQualifications" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+        <label for="studyHours">Weekly Study Hours:</label>
+        <input type="number" id="studyHours" name="studyHours" required>
+
+        <label for="examScore">Exam Score:</label>
+        <input type="number" id="examScore" name="examScore" required>
+
+        <button type="button" onclick="predictDropout()">Predict</button>
+    </form>
+
+    <h3>Prediction Result:</h3>
+    <p id="predictionResult"></p>
+
+    <script>
+        function predictDropout() {
+     
+            var name = document.getElementById('name').value;
+            var maritalStatus = document.getElementById('maritalStatus').value;
+            var course = document.getElementById('course').value;
+            var gender = document.getElementById('gender').value;
+            var nationality = document.getElementById('nationality').value;
+            var previousQualifications = document.getElementById('previousQualifications').value;
+            var age = document.getElementById('age').value;
+            var studyHours = document.getElementById('studyHours').value;
+            var examScore = document.getElementById('examScore').value;
+
+        
+
+         
+            var resultMessage = "Prediction: Student is likely to ";
+
+         
+            document.getElementById('predictionResult').innerText = resultMessage;
+        }
+    </script>
+
+</body>
+</html>
